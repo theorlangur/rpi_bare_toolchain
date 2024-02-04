@@ -1,0 +1,20 @@
+#!/bin/sh
+cmake -S compiler-rt -B build_crt\
+    -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY\
+    -DCOMPILER_RT_OS_DIR="baremetal"\
+    -DCOMPILER_RT_BUILD_BUILTINS=ON\
+    -DCOMPILER_RT_BUILD_SANITIZERS=OFF\
+    -DCOMPILER_RT_BUILD_XRAY=OFF\
+    -DCOMPILER_RT_BUILD_LIBFUZZER=OFF\
+    -DCOMPILER_RT_BUILD_PROFILE=OFF\
+    -DCOMPILER_RT_BAREMETAL_BUILD=ON\
+    -DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON\
+    -DCOMPILER_RT_INCLUDE_TESTS=OFF\
+    -DCMAKE_C_COMPILER=/usr/bin/clang\
+    -DCMAKE_AR=/usr/bin/llvm-ar\
+    -DCMAKE_NM=/usr/bin/llvm-nm\
+    -DCMAKE_RANLIB=/usr/bin/llvm-ranlib\
+    -DLLVM_CONFIG_PATH=/usr/bin/llvm-config\
+    -DCMAKE_CXX_COMPILER=/usr/bin/clang++\
+    -DCMAKE_BUILD_TYPE=Release\
+    --toolchain=$(pwd)/llvm-compiler-rt-builtins-pi-bare-toolchain.cmake
