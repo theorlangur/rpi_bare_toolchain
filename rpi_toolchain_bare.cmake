@@ -1,11 +1,11 @@
 set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_C_COMPILER clang)
 #eabi
-set(triple arm-none-eabi)
-set(builtins clang_rt.builtins-arm)
+#set(triple arm-none-eabi)
+#set(builtins clang_rt.builtins-arm)
 #eabihf
-#set(triple arm-none-eabihf)
-#set(builtins clang_rt.builtins-armhf)
+set(triple arm-none-eabihf)
+set(builtins clang_rt.builtins-armhf)
 
 set(bare_toolchain_path /home/orlangur/myapps/pi/apps/bare_toolchain)
 set(pi_sdk /home/orlangur/myapps/pi/rpi/sdk/sysroot)
