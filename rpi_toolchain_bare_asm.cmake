@@ -1,5 +1,6 @@
-set(CMAKE_CXX_COMPILER clang++-17)
-set(CMAKE_C_COMPILER clang-17)
+set(CMAKE_CXX_COMPILER /home/orlangur/myapps/cpp/toolchains/llvm18/bin/clang++)
+set(CMAKE_C_COMPILER /home/orlangur/myapps/cpp/toolchains/llvm18/bin/clang)
+set(LINKER_LLD /home/orlangur/myapps/cpp/toolchains/llvm18/bin/lld)
 #eabi
 #set(triple arm-none-eabi)
 #set(builtins clang_rt.builtins-arm)
